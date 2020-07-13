@@ -11,19 +11,16 @@ import com.main.model.Student;
 @Component
 public class StudentMapper {
 
-	@Autowired
-	Student student;
 	
-	@Autowired
-	StudentDto studentDto;
 	
-	public List<Student> getStudentsList(List<Student> studentList) {
-		List<Student> listofStudent=new ArrayList<>();
+	public List<StudentDto> getStudentsList(List<Student> studentList) {
+		StudentDto studentDto=new StudentDto();
+		List<StudentDto> listofStudent=new ArrayList<>();
 		for(Student st : studentList){
 		studentDto.setId(st.getId());
 		studentDto.setName(st.getName());
-		studentDto.setSchool(st.getName());
-		listofStudent.add(st);
+		studentDto.setSchool(st.getSchool());
+		listofStudent.add(studentDto);
 		}
 		return listofStudent;
 	}

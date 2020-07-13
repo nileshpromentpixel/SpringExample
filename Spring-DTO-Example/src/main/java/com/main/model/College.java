@@ -13,9 +13,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.stereotype.Component;
+
 @Component
 @Entity
-@Table(name="college")
+@Table(name = "college")
 public class College {
 
 	@Id
@@ -25,14 +26,13 @@ public class College {
 	private String cname;
 	@Column(name = "address")
 	private String address;
-	 @OneToMany(mappedBy = "college", fetch = FetchType.LAZY,
-	            cascade = CascadeType.ALL)
-	    private List<Student> student;
+	@OneToMany(mappedBy = "college", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Student> student;
+
 	public College() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
 
 	public College(int id, String cname, String address, List<Student> student) {
 		super();
@@ -42,45 +42,36 @@ public class College {
 		this.student = student;
 	}
 
-
 	public int getId() {
 		return id;
 	}
-
 
 	public void setId(int id) {
 		this.id = id;
 	}
 
-
 	public String getCname() {
 		return cname;
 	}
-
 
 	public void setCname(String cname) {
 		this.cname = cname;
 	}
 
-
 	public String getAddress() {
 		return address;
 	}
-
 
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
-
 	public List<Student> getStudent() {
 		return student;
 	}
-
 
 	public void setStudent(List<Student> student) {
 		this.student = student;
 	}
 
-	
 }

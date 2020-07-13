@@ -17,18 +17,18 @@ public class CollegeDto {
 	private int id;
 	private String cname;
 	private String address;
-	private List<Student> student;
+	private List<StudentDto> studentDto;
 	public CollegeDto() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-	public CollegeDto(int id, String cname, String address, List<Student> student) {
+	public CollegeDto(int id, String cname, String address, List<StudentDto> studentDto) {
 		super();
 		this.id = id;
 		this.cname = cname;
 		this.address = address;
-		this.student = student;
+		this.studentDto = studentDto;
 	}
 
 	public int getId() {
@@ -49,12 +49,13 @@ public class CollegeDto {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-	public List<Student> getStudent() {
-		return student;
+	public List<StudentDto> getStudentDto() {
+		return studentDto;
 	}
-	public void setStudent(List<Student> student) {
-		this.student = student;
+	public void setStudentDto(List<StudentDto> studentDto) {
+		this.studentDto = studentDto;
 	}
 	
+
 
 }

@@ -12,25 +12,26 @@ import com.main.model.College;
 @Component
 public class CollegeMapper {
 
-	@Autowired
-	CollegeDto collegeDto;
 	
-	@Autowired
-	College college;
+
+	
 	
 	@Autowired
 	StudentMapper studentMapper;
-	
+	List<CollegeDto> collegeData=new ArrayList<>();
+
 	public List<CollegeDto> getMappedData(List<College> collegeList) {
-		List<CollegeDto> collegeData=new ArrayList<>();
 		for(College college :collegeList)
 		{
+	   CollegeDto collegeDto=new CollegeDto();
 		collegeDto.setId(college.getId());
 		collegeDto.setCname(college.getCname());
 		collegeDto.setAddress(college.getAddress());
-		collegeDto.setStudent(studentMapper.getStudentsList(college.getStudent()));
+		collegeDto.setStudentDto(studentMapper.getStudentsList(college.getStudent()));
+		
 		collegeData.add(collegeDto);
 		}
+		
 		return collegeData;
 	}
 
