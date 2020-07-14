@@ -21,7 +21,7 @@ public class CollegeServiceImpl implements CollegeService{
 	@Override
 	public List<CollegeDto> getCollegeList() {
 	List<College>	modelList=collegeDao.findAll();
-	
+	System.out.print(modelList.get(1));
 		return collegeMapper.getMappedData(modelList);
 	}
 
