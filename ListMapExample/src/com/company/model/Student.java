@@ -1,6 +1,8 @@
 package com.company.model;
 
-public class Student {
+import java.util.Comparator;
+
+public class Student implements Comparable {
     private String studentName;
     private String collegeName;
     private String grade;
@@ -36,4 +38,10 @@ public class Student {
     }
 
 
+    @Override
+    public int compareTo(Object o) {
+        return this.getStudentName().compareTo(((Student) o).getStudentName());
+    }
 }
+
+

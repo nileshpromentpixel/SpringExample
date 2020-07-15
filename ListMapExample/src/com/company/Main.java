@@ -1,14 +1,18 @@
 package com.company;
 
+import com.company.Comprator.CollegeComparator;
+import com.company.Comprator.NameComparator;
 import com.company.model.*;
 import com.company.service.IntegerMap;
 import com.company.service.MapwithList;
 import com.company.service.NestedMap;
 import com.company.service.UniqMap;
 
+import java.util.stream.*;
+
 import java.util.*;
 import java.util.stream.Collectors;
- 
+
 public class Main {
 
 
@@ -27,6 +31,26 @@ public class Main {
         studentList.add(s4);
         studentList.add(s5);
         studentList.add(s6);
+
+
+        //   Collections.sort(studentList);
+
+        Scanner sc= new Scanner(System.in);    //System.in is a standard input stream
+        System.out.print("Enter first number- ");
+        int number= sc.nextInt();
+        //sort by age
+        if(number == 1) {
+            Collections.sort(studentList, new NameComparator());
+            for (Student student : studentList) {
+                System.out.println("Student name =" + student.getStudentName());
+            }
+        }
+        if(number == 2) {
+            Collections.sort(studentList, new CollegeComparator());
+            for (Student student : studentList) {
+                System.out.println("College name =" + student.getStudentName());
+            }
+        }
 
         NestedMap nestedMap = new NestedMap();
         System.out.println();

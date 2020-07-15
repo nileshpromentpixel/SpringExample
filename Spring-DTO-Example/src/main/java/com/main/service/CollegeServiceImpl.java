@@ -9,8 +9,9 @@ import com.main.dao.CollegeDao;
 import com.main.dto.CollegeDto;
 import com.main.mapper.CollegeMapper;
 import com.main.model.College;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class CollegeServiceImpl implements CollegeService{
 
 	@Autowired
