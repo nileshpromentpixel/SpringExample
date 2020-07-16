@@ -12,7 +12,6 @@ import com.main.model.Student;
 public class StudentMapper {
 
 	
-<<<<<<< Updated upstream
 	
 	public List<StudentDto> getStudentsList(List<Student> studentList) {
 		StudentDto studentDto=new StudentDto();
@@ -21,18 +20,6 @@ public class StudentMapper {
 		studentDto.setId(st.getId());
 		studentDto.setName(st.getName());
 		studentDto.setSchool(st.getSchool());
-=======
-
-	
-	public List<Student> getStudentsList(List<Student> studentList) {
-		List<StudentDto> listofStudent=new ArrayList<>();
-		StudentDto studentDto=new StudentDto();
-		for(Student st : studentList){
-		studentDto.setId(st.getId());
-		studentDto.setName(st.getName());
-		studentDto.setSchool(st.getName());
->>>>>>> Stashed changes
-		listofStudent.add(studentDto);
 		}
 		return listofStudent;
 	}
